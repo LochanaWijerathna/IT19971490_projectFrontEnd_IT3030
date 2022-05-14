@@ -11,19 +11,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import recources.Consumption;
+import recources.overallMonitoring;
 
 /**
  * Servlet implementation class consumptionAPI
  */
-@WebServlet("/consumptionAPI")
-public class ConsumptionAPI extends HttpServlet {
+@WebServlet("/overallMonitoringAPI")
+public class overallMonitoringAPI extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    Consumption con = new Consumption();   
+	overallMonitoring con = new overallMonitoring();   
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ConsumptionAPI() {
+    public overallMonitoringAPI() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -64,10 +64,10 @@ public class ConsumptionAPI extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String output = con.insertConsumption(request.getParameter("userID"), 
+		String output = con.insertOverallMonitoring(request.getParameter("pay_ID"), 
+				request.getParameter("power_consumption_ID"), 
 				request.getParameter("month"), 
-				request.getParameter("premonreading"), 
-				request.getParameter("curmonreading"));
+				request.getParameter("comment"));
 			response.getWriter().write(output);
 	}
 
@@ -77,11 +77,8 @@ public class ConsumptionAPI extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Map paras = getParasMap(request);
-		String output = con.updateConsumption(paras.get("conID").toString(), 
-				paras.get("userID").toString(), 
-				paras.get("month").toString(), 
-				paras.get("premonreading").toString(), 
-				paras.get("curmonreading").toString());
+		String output = con.updateMonitoring(paras.get("monitoring_ID").toString(), 
+				paras.get("comment").toString());
 		response.getWriter().write(output);
 	}
 
@@ -91,7 +88,7 @@ public class ConsumptionAPI extends HttpServlet {
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Map paras = getParasMap(request);
-		String output = con.deleteConsumption(paras.get("conID").toString());
+		String output = con.deleteMonitoring(paras.get("conID").toString());
 		response.getWriter().write(output);
 	}
 

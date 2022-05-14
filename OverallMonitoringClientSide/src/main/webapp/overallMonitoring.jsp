@@ -1,5 +1,5 @@
 <%@page import="util.DBConnection"%>
-<%@page import="recources.Consumption"%>
+<%@page import="recources.overallMonitoring"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
@@ -31,11 +31,11 @@
 		
 		<!--------------------- Start of form  ------------------------------->
 		<form id="formCon" name="formCon">
-			<select id = "userID" name = "userID" class="form-control form-control-sm">
+			<%-- <select id = "userID" name = "userID" class="form-control form-control-sm">
             	<option class="dropdown-menu">User ID</option>
                     <%
                     	try{
-                    		Connection con = userConn.connect();
+                    		Connection con = userConn.connectRoot();
                     		Statement st = con.createStatement();
                     		String query = "select * from users";
                     		ResultSet rs = st.executeQuery(query);
@@ -50,7 +50,8 @@
                     			
                    		}
                    	%>
-            </select>
+            </select> --%>
+            <input id="month" name="month" type="month" class="form-control form-control-sm" placeholder="Month">
 			<br> 
 		
 			<input id="month" name="month" type="month" class="form-control form-control-sm" placeholder="Month">
@@ -76,8 +77,8 @@
 		<!--------------------- Display concepts  ------------------------------->
 		<div id="divItemsGrid">
 		<%
-			Consumption consumptionObj = new Consumption();
-			out.print(consumptionObj.readConsumption());
+		overallMonitoring overallMonObj = new overallMonitoring();
+			out.print(overallMonObj.readOverallMonitoring());
 		%>
 		</div>
 

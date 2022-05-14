@@ -28,7 +28,7 @@ $(document).on("click", "#btnSave", function(event)
 	var type = ($("#hidConIDSave").val() == "") ? "POST" : "PUT";
 	$.ajax(
 	{
-		url : "ConsumptionAPI",
+		url : "overallMonitoringAPI",
 		type : type,
 		data : $("#formCon").serialize(),
 		dataType : "text",
@@ -87,7 +87,7 @@ $(document).on("click", ".btnRemove", function(event)
 		{
 			$.ajax(
 			{
-				url : "ConsumptionAPI",
+				url : "overallMonitoringAPI",
 				type : "DELETE",
 				data : "conID=" + $(this).data("conID"),
 				dataType : "text",
