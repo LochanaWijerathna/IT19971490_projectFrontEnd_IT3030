@@ -51,16 +51,16 @@
                    		}
                    	%>
             </select> --%>
-            <input id="month" name="month" type="month" class="form-control form-control-sm" placeholder="Month">
+            <input id="pay_ID" name="pay_ID" type="text" class="form-control form-control-sm" placeholder="pay_ID">
 			<br> 
 		
-			<input id="month" name="month" type="month" class="form-control form-control-sm" placeholder="Month">
+			<input id="power_consumption_ID" name="power_consumption_ID" type="text" class="form-control form-control-sm" placeholder="power_consumption_ID">
 			<br> 
             
-            <input id="premonreading" name="premonreading" type="text" class="form-control form-control-sm" placeholder="Previous Month Reading">
+            <input id="month" name="month" type="month" class="form-control form-control-sm" placeholder="month">
 			<br> 
 			
-			<input id="curmonreading" name="curmonreading" type="text" class="form-control form-control-sm" placeholder="Current Month Reading">
+			<input id="comment" name="comment" type="text" class="form-control form-control-sm" placeholder="comment">
 			<br> 
             
 			<input id="btnSave" name="btnSave" type="button" value="Add Consumption" class="btn btn-primary">
