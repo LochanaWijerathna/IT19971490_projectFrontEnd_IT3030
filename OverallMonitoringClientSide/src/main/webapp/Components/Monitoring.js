@@ -67,17 +67,17 @@ function onItemSaveComplete(response, status){
 $(document).on("click", ".btnUpdate", function(event){ 
 		
 		 $("#hidItemIDSave").val($(this).data("userid")); 
-		$("#pay_ID").val($(this).closest("tr").find('td:eq(0)').text());
-		$("#power_consumption_ID").val($(this).closest("tr").find('td:eq(0)').text());
-		$("#month").val($(this).closest("tr").find('td:eq(0)').text());
-		 $("#comment").val($(this).closest("tr").find('td:eq(0)').text()); 
+		 $("#pay_ID").val($(this).closest("tr").find('td:eq(1)').text());
+		 $("#power_consumption_ID").val($(this).closest("tr").find('td:eq(2)').text());
+		 $("#month").val($(this).closest("tr").find('td:eq(3)').text());
+		 $("#comment").val($(this).closest("tr").find('td:eq(4)').text()); 
 
 		 
 });
 
 
 
-
+//DELETE
 
 $(document).on("click", ".btnRemove", function(event) { 
 	 $.ajax( 
@@ -125,23 +125,29 @@ function onItemDeleteComplete(response, status){
 function validateItemForm(){
 	// CODE
 
-/*//Phone ---------------------------
-if ($("#phone_no").val().trim() == "")
+//Pay ID ---------------------------
+if ($("#pay_ID").val().trim() == "")
 {
-return "Insert Phone Number.";
+return "Insert Pay ID";
 } 
 
-//email------------------------------
-if ($("#email").val().trim() == "")
+//Power consumption ID------------------------------
+if ($("#power_consumption_ID").val().trim() == "")
 {
-return "Insert email.";
+return "Insert Power consumption ID";
 }
 
-//description---------------------------------
-if ($("#description").val().trim() == "")
+//Month---------------------------------
+if ($("#month").val().trim() == "")
 {
-return "Insert description.";
-}*/
+return "Insert Month";
+}
+
+//Comment---------------------------------
+if ($("#comment").val().trim() == "")
+{
+return "Insert Comment";
+}
 	
 
 	return true;

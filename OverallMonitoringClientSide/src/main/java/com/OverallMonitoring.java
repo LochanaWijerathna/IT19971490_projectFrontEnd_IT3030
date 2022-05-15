@@ -120,7 +120,7 @@ private Connection connect(){
 			output = "<table border='1'><tr><th>Monitoring ID</th><th>Payment ID</th>" +
 			"<th>Power Consumption ID</th>" +
 			"<th>month</th>" +
-			"<th>units</th><th>balance</th><th>comment</th></tr>"+
+			"<th>units</th><th>balance</th><th>comment</th>"+
 			"<th>Update</th><th>Remove</th></tr>";
 			String query = "select * from monitoring";
 			Statement stmt = con.createStatement();

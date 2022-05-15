@@ -10,7 +10,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Consumption Monitoring Management</title>
+	<title>Overall Monitoring Management</title>
 	
 	<!-- Linking the css scripts -->
 	<link rel="stylesheet" href="Views/bootstrap.min.css">
@@ -27,21 +27,21 @@
 	<div class="container">
 	<div class="row">
 	<div class="col-12">
-		<h1 align="center">Consumption Monitoring Management</h1>
+		<h1 align="center">Overall Monitoring Management</h1>
 		
 		<!--------------------- Start of form  ------------------------------->
 		<form id="formItem" name="formItem">
 			
-            <input id="pay_ID" name="pay_ID" type="text" class="form-control form-control-sm" placeholder="pay_ID">
+            <input id="pay_ID" name="pay_ID" type="text" class="form-control form-control-sm" placeholder="Payment ID">
 			<br> 
 		
-			<input id="power_consumption_ID" name="power_consumption_ID" type="text" class="form-control form-control-sm" placeholder="power_consumption_ID">
+			<input id="power_consumption_ID" name="power_consumption_ID" type="text" class="form-control form-control-sm" placeholder="Power Consumption ID">
 			<br> 
             
-            <input id="month" name="month" type="text" class="form-control form-control-sm" placeholder="month">
+            <input id="month" name="month" type="text" class="form-control form-control-sm" placeholder="Month">
 			<br> 
 			
-			<input id="comment" name="comment" type="text" class="form-control form-control-sm" placeholder="comment">
+			<input id="comment" name="comment" type="text" class="form-control form-control-sm" placeholder="Comment">
 			<br> 
             
 			<input id="btnSave" name="btnSave" type="button" value="Add Consumption" class="btn btn-primary">
