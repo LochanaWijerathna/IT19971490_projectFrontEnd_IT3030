@@ -31,33 +31,14 @@
 		
 		<!--------------------- Start of form  ------------------------------->
 		<form id="formCon" name="formCon">
-			<%-- <select id = "userID" name = "userID" class="form-control form-control-sm">
-            	<option class="dropdown-menu">User ID</option>
-                    <%
-                    	try{
-                    		Connection con = userConn.connectRoot();
-                    		Statement st = con.createStatement();
-                    		String query = "select * from users";
-                    		ResultSet rs = st.executeQuery(query);
-                    			
-                    		while(rs.next()){
-                    			%>
-                    			<option value="<%=rs.getString("userID")%>"><%=rs.getString("userID") %></option>
-                    				<%
-                    		}
-                    		con.close();
-                    	}catch(Exception e){
-                    			
-                   		}
-                   	%>
-            </select> --%>
+			
             <input id="pay_ID" name="pay_ID" type="text" class="form-control form-control-sm" placeholder="pay_ID">
 			<br> 
 		
 			<input id="power_consumption_ID" name="power_consumption_ID" type="text" class="form-control form-control-sm" placeholder="power_consumption_ID">
 			<br> 
             
-            <input id="month" name="month" type="month" class="form-control form-control-sm" placeholder="month">
+            <input id="month" name="month" type="text" class="form-control form-control-sm" placeholder="month">
 			<br> 
 			
 			<input id="comment" name="comment" type="text" class="form-control form-control-sm" placeholder="comment">

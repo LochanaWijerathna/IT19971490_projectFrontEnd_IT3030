@@ -17,7 +17,7 @@ $(document).on("click", "#btnSave", function(event)
 	$("#alertError").hide();
 		
 	// Form validation-------------------
-	var status = validateConceptForm();
+	var status = validateMonitoringForm();
 	if (status != true){
 		$("#alertError").text(status);
 		$("#alertError").show();
@@ -33,14 +33,14 @@ $(document).on("click", "#btnSave", function(event)
 		data : $("#formCon").serialize(),
 		dataType : "text",
 		complete : function(response, status){
-			onConceptSaveComplete(response.responseText, status);
+			onMonitoringSaveComplete(response.responseText, status);
 		}
 		});
 });
 
 
 
-function onConsumptionSaveComplete(response, status)
+function onMonitoringSaveComplete(response, status)
 {
 	if (status == "success")
 	{
@@ -75,10 +75,10 @@ function onConsumptionSaveComplete(response, status)
 $(document).on("click", ".btnUpdate", function(event)
 {
 	$("#hidConIDSave").val($(this).data("conceptcode"));
-	$("#userID").val($(this).closest("tr").find('td:eq(1)').text());
-	$("#month").val($(this).closest("tr").find('td:eq(2)').text());
-	$("#premonreading").val($(this).closest("tr").find('td:eq(3)').text());
-	$("#curmonreading").val($(this).closest("tr").find('td:eq(4)').text());
+	$("#pay_ID").val($(this).closest("tr").find('td:eq(1)').text());
+	$("#power_consumption_ID").val($(this).closest("tr").find('td:eq(2)').text());
+	$("#month").val($(this).closest("tr").find('td:eq(3)').text());
+	$("#comment").val($(this).closest("tr").find('td:eq(4)').text());
 });
 
 
@@ -89,7 +89,7 @@ $(document).on("click", ".btnRemove", function(event)
 			{
 				url : "overallMonitoringAPI",
 				type : "DELETE",
-				data : "conID=" + $(this).data("conID"),
+				data : "monitoring_ID=" + $(this).data("monitoring_ID"),
 				dataType : "text",
 				complete : function(response, status)
 				{
@@ -127,9 +127,9 @@ function onItemDeleteComplete(response, status)
 
 
 //========== VALIDATION ================================================
-function validateConsumptionForm()
+function validateMonitoringForm()
 {
-		// Month
+		/*// Month
 		if ($("#month").val().trim() == "")
 		{
 			return "Insert Month!!";
@@ -158,7 +158,7 @@ function validateConsumptionForm()
 		if (!$.isNumeric(curmonreading))
 		{
 			return "Invalid Current Month Reading (Please enter a number)";
-		}
+		}*/
 		
 		return true;
 }

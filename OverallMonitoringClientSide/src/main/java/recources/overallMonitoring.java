@@ -87,10 +87,12 @@ public class overallMonitoring {
 				// execute the statement
 				preparedStmt.execute();
 				con.close();
-				output = "Inserted Overall Monitoring record successfully";
+				
+				String newConcepts = readOverallMonitoring();
+				output = "{\"status\":\"success\", \"data\": \"" +newConcepts + "\"}";
 				
 			}catch (Exception e){
-				output = "Error while inserting the Overall Monitoring.";
+				output = "{\"status\":\"error\", \"data\":\"Error while launching Overall Monitoring\"}";
 				System.err.println(e.getMessage());
 			}
 				
@@ -136,10 +138,10 @@ public class overallMonitoring {
 				output += "<td>" + comment + "</td>";
 			
 				// buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>" 
-				+ "<td><form method='post' action='items.jsp'>" 
-				+ "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
-				+ "<input name='itemID' type='hidden' value='" + monitoring_ID + "'>" + "</form></td></tr>";
+				output += "<td><input name='btnUpdate' type='button' value='Update' "
+						+ "class='btnUpdate btn btn-secondary' data-conID='" + monitoring_ID + "'></td>"
+						+ "<td><input name='btnRemove' type='button' value='Remove' "
+						+ "class='btnRemove btn btn-danger' data-conID='" + monitoring_ID + "'></td></tr>";
 			}
 			
 			con.close();
@@ -180,10 +182,11 @@ public class overallMonitoring {
 			preparedStmt.execute();
 		
 			con.close();
-			output = "Updated the comment of the record successfully";
+			String newItems = readOverallMonitoring();
+			output = "{\"status\":\"success\", \"data\": \"" +newItems + "\"}";
 		
 		}catch (Exception e){
-			output = "Error while updating the comment of the record.";
+			output = "{\"status\":\"error\", \"data\":\"Error while updating the comment\"}";
 			System.err.println(e.getMessage());
 		}
 		
@@ -210,9 +213,11 @@ public class overallMonitoring {
 			preparedStmt.execute();
 
 			con.close();
-			output = "Deleted Monitoring Service successfully!";
+			String newItems = readOverallMonitoring();
+			output = "{\"status\":\"success\", \"data\": \"" +newItems + "\"}";
+			
 		}catch (Exception e){
-			output = "Error while deleting the monitoring record.";
+			output = "{\"status\":\"error\", \"data\":\"Error while deleting the Overall Monitoring\"}";
 			System.err.println(e.getMessage());
 		}
 		

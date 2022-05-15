@@ -88,7 +88,7 @@ public class overallMonitoringAPI extends HttpServlet {
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Map paras = getParasMap(request);
-		String output = con.deleteMonitoring(paras.get("conID").toString());
+		String output = con.deleteMonitoring(paras.get("monitoring_ID").toString());
 		response.getWriter().write(output);
 	}
 
