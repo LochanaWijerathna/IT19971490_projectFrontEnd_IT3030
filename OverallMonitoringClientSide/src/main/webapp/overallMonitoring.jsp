@@ -1,5 +1,6 @@
-<%@page import="util.DBConnection"%>
-<%@page import="recources.overallMonitoring"%>
+<%-- <%@page import="util.DBConnection"%>
+<%@page import="recources.overallMonitoring"%> --%>
+<%@ page import="com.OverallMonitoring"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
@@ -16,13 +17,12 @@
 	<link rel="stylesheet" href="Views/form.css">
 	
 	<!-- Linking the js files -->
-	<script src="Components/jquery-3.2.1.min.js"></script>
-	<script src="Components/concept.js"></script>
+	<script src="Components/jquery-3.6.0.min.js"></script>
+	<script src="Components/Monitoring.js"></script>
 	
 </head>
 <body>
 
-	<% DBConnection userConn = new DBConnection(); %>
 		
 	<div class="container">
 	<div class="row">
@@ -30,7 +30,7 @@
 		<h1 align="center">Consumption Monitoring Management</h1>
 		
 		<!--------------------- Start of form  ------------------------------->
-		<form id="formCon" name="formCon">
+		<form id="formItem" name="formItem">
 			
             <input id="pay_ID" name="pay_ID" type="text" class="form-control form-control-sm" placeholder="pay_ID">
 			<br> 
@@ -45,7 +45,7 @@
 			<br> 
             
 			<input id="btnSave" name="btnSave" type="button" value="Add Consumption" class="btn btn-primary">
-            <input type="hidden" id="hidConIDSave" name="hidConIDSave" value="">
+            <input type="hidden" id="hidItemIDSave" name="hidItemIDSave" value="">
 		</form>
 		<!--------------------- End of form  ------------------------------->
 		
@@ -58,7 +58,7 @@
 		<!--------------------- Display concepts  ------------------------------->
 		<div id="divItemsGrid">
 		<%
-		overallMonitoring overallMonObj = new overallMonitoring();
+		OverallMonitoring overallMonObj = new OverallMonitoring();
 			out.print(overallMonObj.readOverallMonitoring());
 		%>
 		</div>
